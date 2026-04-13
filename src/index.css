@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 96%;
+
+    --card: 222 44% 9%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 222 44% 9%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 213 94% 68%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 263 70% 68%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 30% 14%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 174 72% 56%;
+    --accent-foreground: 222 47% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 20% 18%;
+    --input: 222 20% 18%;
+    --ring: 213 94% 68%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 222 44% 8%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 213 94% 68%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 222 30% 14%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 222 20% 18%;
+    --sidebar-ring: 213 94% 68%;
+
+    /* Custom tokens */
+    --hero-bg: 222 47% 5%;
+    --hero-glow: 213 94% 68%;
+    --kpi-cyan: 174 72% 56%;
+    --kpi-blue: 213 94% 68%;
+    --kpi-purple: 263 70% 68%;
+    --nav-bg: 222 47% 5% / 0.8;
+    --card-border: 222 20% 16%;
+    --card-hover: 222 30% 12%;
+    --gradient-primary: linear-gradient(135deg, hsl(213 94% 68%), hsl(263 70% 68%));
+    --gradient-accent: linear-gradient(135deg, hsl(174 72% 56%), hsl(213 94% 68%));
+  }
+
+  .light {
+    --background: 0 0% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 213 94% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 263 70% 55%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 14% 92%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 174 72% 40%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 87%;
+    --input: 220 13% 87%;
+    --ring: 213 94% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-accent {
+    background: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--primary)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3), 0 0 60px hsl(var(--primary) / 0.1);
+  }
+
+  .glow-secondary {
+    box-shadow: 0 0 20px hsl(var(--secondary) / 0.3), 0 0 60px hsl(var(--secondary) / 0.1);
+  }
+
+  .hero-gradient-bg {
+    background: radial-gradient(ellipse 80% 50% at 20% 50%, hsl(var(--hero-glow) / 0.08) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 40% at 80% 20%, hsl(var(--kpi-purple) / 0.05) 0%, transparent 60%),
+                hsl(var(--hero-bg));
+  }
+
+  .card-gradient {
+    background: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted) / 0.5));
+  }
+}
+
+/* Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+@keyframes counter-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out both;
+}
+
+.animate-scroll-bounce {
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
+
+/* Delay utilities */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
