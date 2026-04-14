@@ -8,6 +8,11 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 3000,
+    allowedHosts: [
+      "supply-chain-pro-50.cluster-0.preview.emergentcf.cloud",
+      "localhost",
+      ".emergentcf.cloud"
+    ],
     hmr: {
       overlay: false,
     },

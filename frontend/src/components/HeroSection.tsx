@@ -12,7 +12,7 @@ const HeroSection = () => {
           </p>
 
           {/* Name */}
-          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-4 animate-fade-in-up delay-100">
+          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-4 animate-fade-in-up delay-100 whitespace-nowrap">
             <span className="text-gradient-primary">Sriram Nandan Palaniswamy</span>
           </h1>
 
