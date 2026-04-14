@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 const navLinks = [
   { label: "About", href: "#about", type: "anchor" },
-  { label: "Career", href: "/career", type: "route" },
-  { label: "Education", href: "/education", type: "route" },
+  { label: "Career", href: "#career", type: "anchor" },
+  { label: "Education", href: "#education", type: "anchor" },
   { label: "Projects", href: "#projects", type: "anchor" },
   { label: "Skills", href: "#skills", type: "anchor" },
   { label: "Contact", href: "#contact", type: "anchor" },

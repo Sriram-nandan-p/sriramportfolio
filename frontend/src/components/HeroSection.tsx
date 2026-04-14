@@ -12,7 +12,7 @@ const HeroSection = () => {
           </p>
 
           {/* Name - Single Line */}
-          <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-tight mb-6 animate-fade-in-up delay-100 whitespace-nowrap overflow-x-auto">
+          <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-tight mb-6 animate-fade-in-up delay-100 whitespace-nowrap">
             Sriram Nandan Palaniswamy
           </h1>
 
