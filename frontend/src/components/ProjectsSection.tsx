@@ -32,7 +32,7 @@ const projects: Project[] = [
     ],
     demonstrates: "Demand planning fundamentals, forecast evaluation discipline, and the ability to turn analytics into planner actions.",
     technologies: ["Python", "SQL", "Tableau", "scikit-learn", "Time-series", "Backtesting"],
-    cta: ["View Dashboard", "View Notebook"],
+    cta: ["View on GitHub"],
   },
   {
     title: "Manufacturing Inventory Policy Optimizer",
@@ -52,7 +52,7 @@ const projects: Project[] = [
     ],
     demonstrates: "Inventory planning depth, service economics, and simulation-based validation of planning decisions.",
     technologies: ["Python", "SQL", "Tableau", "numpy", "Monte Carlo", "Inventory math"],
-    cta: ["View Dashboard", "View Notebook"],
+    cta: ["View on GitHub"],
   },
   {
     title: "Supplier OTIF + Quality Scorecard",
@@ -72,7 +72,7 @@ const projects: Project[] = [
     ],
     demonstrates: "Procurement analytics maturity, supplier governance, and data-driven supplier action planning.",
     technologies: ["Python", "SQL", "Tableau", "KPI design", "Supplier scorecards"],
-    cta: ["View Scorecard", "View Notebook"],
+    cta: ["View on GitHub"],
   },
   {
     title: "RFQ Landed Cost + Award Recommendation Engine",
@@ -92,7 +92,7 @@ const projects: Project[] = [
     ],
     demonstrates: "Strategic sourcing logic, total cost thinking, and stakeholder-ready procurement decision support.",
     technologies: ["Python", "SQL", "Tableau", "Cost modeling", "Scenario analysis"],
-    cta: ["View RFQ Model", "View Notebook"],
+    cta: ["View on GitHub"],
   },
 ];
 
@@ -111,7 +111,6 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       <div className="p-6 md:p-8">
         <div className="flex items-start justify-between gap-4 mb-3">
           <div>
-            <span className="text-xs font-mono text-primary mb-2 block">PROJECT 0{index + 1}</span>
             <h3 className="font-heading text-xl md:text-2xl font-bold text-foreground">{project.title}</h3>
           </div>
         </div>
@@ -146,7 +145,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
               <ul className="space-y-1">
                 {project.features.map((f, i) => (
                   <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
-                    <span className="text-primary mt-0.5">→</span> {f}
+                    <span className="text-primary mt-0.5">•</span> {f}
                   </li>
                 ))}
               </ul>
@@ -170,8 +169,10 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         {/* CTAs */}
         <div className="flex flex-wrap gap-3">
           {project.cta.map((label) => (
-            <Button key={label} variant="outlineGlow" size="sm" className="gap-2">
-              {label} <ExternalLink size={14} />
+            <Button key={label} variant="outlineGlow" size="sm" className="gap-2" asChild>
+              <a href="https://github.com/Sriram-nandan-p" target="_blank" rel="noopener noreferrer">
+                {label} <ExternalLink size={14} />
+              </a>
             </Button>
           ))}
         </div>

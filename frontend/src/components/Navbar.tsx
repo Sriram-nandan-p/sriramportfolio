@@ -26,7 +26,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between h-16 px-4 md:px-8">
         <a href="#" className="font-mono text-sm text-primary tracking-wide">
-          {"<Analyze.Plan.Optimize />"}
+          {"<Flow.Plan.Deliver />"}
         </a>
 
         {/* Desktop */}
